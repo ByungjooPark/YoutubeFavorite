@@ -13,6 +13,7 @@ public class ClientService {
 	@Autowired
 	private ClientMapper mapper;
 	
+	
 	public List<YoutubeVO> getList() {
 		return mapper.getList();
 	}

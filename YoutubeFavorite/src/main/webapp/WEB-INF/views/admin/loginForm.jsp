@@ -24,7 +24,10 @@
 			<label for="password">비밀번호</label>
 			<input type="password" id="password" name="password" />
 		</p>
-		<button type="submit" class="btn">로그인</button>
+		<input type="submit" class="btn" value="로그인">
+		<a href="joinForm"><button type="button">회원가입</button></a>		
 	</form:form>
+	
+		
 </body>
 </html>

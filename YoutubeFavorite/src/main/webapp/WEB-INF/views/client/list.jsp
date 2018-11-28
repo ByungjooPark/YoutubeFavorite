@@ -11,8 +11,14 @@
 클라이언트 리스트 화면
 <c:forEach var="item" items="${list }">
 	<div>
-		${item.y_no } - ${item.y_url } - ${item.y_regdate }
+		${item.y_no } - ${item.y_title } - ${item.y_regdate }
+		<br>
+		<a href="https://www.youtube.com/watch?v=${item.y_url }">
+		<img alt="" src="https://img.youtube.com/vi/${item.y_url }/0.jpg">
+		</a>
 	</div>
+	<br>
 </c:forEach>
 </body>
 </html>
+

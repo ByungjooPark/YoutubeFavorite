@@ -5,8 +5,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 	
+	<!-- 비밀번호 암호화 빈등록 -->
+	<beans:bean id="bcryptPasswordEncoder" 
+			class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+	
+	
+	
 	<http use-expressions="true"> 
 		<intercept-url pattern="/admin/loginForm" access="permitAll" />
+		<intercept-url pattern="/admin/joinForm" access="permitAll" />
 		<intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
 		<intercept-url pattern="/client/**" access="permitAll" />
 		
@@ -25,9 +32,24 @@
 	<!-- provider --> 
 	<authentication-manager> 
 		<authentication-provider>
-			<user-service>
-				<user name="admin" password="2222" authorities="ROLE_ADMIN" />
-			</user-service>
+			<jdbc-user-service
+				data-source-ref="dataSource"
+				role-prefix="ROLE_"
+				users-by-username-query="
+					select 
+						u_id as username, 
+						u_pw as password, 
+						1 as enabled	
+					from yf_user 
+					where u_id = ?"
+				authorities-by-username-query="
+					select 
+						u_id as username,
+						 u_auth as authority	
+					from yf_user where u_id = ?"/>
+					
+			<!-- 비밀번호 암호화 로그인할 때 적용 -->
+			<password-encoder hash="bcrypt" />
 		</authentication-provider>
 	</authentication-manager>
 	

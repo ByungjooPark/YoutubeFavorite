@@ -6,6 +6,7 @@
 
 <configuration>
 	<typeAliases>
-		
+		<typeAlias alias="UserVO" type="kr.co.yu.model.UserVO"/>
+		<typeAlias alias="YoutubeVO" type="kr.co.yu.model.YoutubeVO" />
 	</typeAliases>
 </configuration>

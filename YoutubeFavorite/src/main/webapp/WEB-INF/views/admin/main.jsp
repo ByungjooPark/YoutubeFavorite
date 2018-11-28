@@ -11,6 +11,10 @@
 <body>
 	<form:form action="${pageContext.request.contextPath }/logout" method="POST">
 		<input type="submit" value="Logout" />
+		
 	</form:form>
+	<a href="insertURL"><button>등록</button></a>
+	
+	
 </body>
 </html>

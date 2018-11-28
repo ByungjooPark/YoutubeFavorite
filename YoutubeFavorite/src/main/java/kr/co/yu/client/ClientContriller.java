@@ -14,7 +14,7 @@ import kr.co.yu.model.YoutubeVO;
 public class ClientContriller {
 	@Autowired
 	private ClientService service;
-	
+		
 	@RequestMapping("list")
 	public String list(Model model) {
 		
