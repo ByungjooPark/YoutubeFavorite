@@ -16,5 +16,6 @@
 		insert into yf_youtube(y_no, y_url, y_title)
 		values(seq_yf_youtube.nextval, #{y_url}, #{y_title})
 	</insert>
+
 	
 </mapper>

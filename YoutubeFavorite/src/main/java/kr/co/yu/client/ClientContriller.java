@@ -22,4 +22,9 @@ public class ClientContriller {
 		model.addAttribute("list", list);
 		return "client/list";
 	}
+	
+	@RequestMapping("gallaryList")
+	public String gallaryList() {
+		return "client/gallaryList";
+	}
 }

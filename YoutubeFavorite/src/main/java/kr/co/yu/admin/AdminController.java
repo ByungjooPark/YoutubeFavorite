@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import kr.co.yu.model.GallaryVO;
 import kr.co.yu.model.UserVO;
 import kr.co.yu.model.YoutubeVO;
 
@@ -53,5 +54,21 @@ public class AdminController {
 		System.out.println("insert URL POST");
 		service.insertURL(vo);
 		return "redirect:main";
+	}
+	
+	@RequestMapping("insertGallary")
+	public String insertGallaryGet() {
+		System.out.println("insertGallary GET");
+		return "admin/insertGallary";
+	}
+	
+	@RequestMapping(value="insertGallary", method=RequestMethod.POST)
+	public String insertGallaryPost(GallaryVO vo) {
+		System.out.println("insertGallary POST");
+		System.out.println("title : " + vo.getTitle());
+		System.out.println("file : " + vo.getImg());
+		service.insertGallaryVO(vo);
+		
+		return "redirect:/client/gallaryList";
 	}
 }
