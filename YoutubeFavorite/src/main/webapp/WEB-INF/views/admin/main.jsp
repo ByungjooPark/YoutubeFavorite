@@ -14,7 +14,7 @@
 		
 	</form:form>
 	<a href="insertURL"><button>등록</button></a>
-	<a href="insertGallary"><button>겔러리로</button></a>
+	<a href="insertGallery"><button>겔러리로</button></a>
 	
 	
 </body>

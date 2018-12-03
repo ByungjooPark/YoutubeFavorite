@@ -4,10 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>GalleryDetail</title>
 </head>
 <body>
-	<img src="/yu/res/img/2018/11/30/e7764c7e-4358-447e-8251-d46c78b568cf.jpg" />
-	
+	${vo.g_no }<br>
+	${vo.g_title }	${vo.g_regdate }<br>
+	<img src="/yu/res/img/${vo.g_path}">
 </body>
 </html>

@@ -12,7 +12,7 @@
 <body>
 	<form:form id="frm" onsubmit="return beforeSend()" enctype="multipart/form-data">
 		<p>
-			제목 : <input type="text" name="title">
+			제목 : <input type="text" name="g_title">
 			이미지 : <input type="file" name="img" accept="image/*">
 		</p>
 		
@@ -23,7 +23,7 @@
 		function beforeSend() {
 			var form = document.getElementById("frm");
 			
-			if(form.title.value == "" || form.title.value == null || form.title.value == undefined) {
+			if(form.g_title.value == "" || form.g_title.value == null || form.g_title.value == undefined) {
 				alert("제목을 입력해 주세요.");
 				return false;
 			} else if(form.img.value == "" || form.img.value == null || form.img.value == undefined) {

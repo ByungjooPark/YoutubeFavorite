@@ -5,9 +5,17 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="kr.co.yu.client.dao.ClientMapper">
-	<select id="getList" resultType="kr.co.yu.model.YoutubeVO">
+	<select id="getList" resultType="YoutubeVO">
 		select * from yf_youtube
 	</select>
 	
+	<select id="getGalleryList" resultType="GalleryVO">
+		select * from yf_gallary
+	</select>
+	
+	<select id="getGalleryDetail" resultType="GalleryVO" parameterType="int">
+		select * from yf_gallary
+		where g_no = #{g_no}
+	</select>
 	
 </mapper>

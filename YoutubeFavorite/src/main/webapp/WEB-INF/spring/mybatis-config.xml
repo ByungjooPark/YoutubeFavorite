@@ -8,5 +8,6 @@
 	<typeAliases>
 		<typeAlias alias="UserVO" type="kr.co.yu.model.UserVO"/>
 		<typeAlias alias="YoutubeVO" type="kr.co.yu.model.YoutubeVO" />
+		<typeAlias alias="GalleryVO" type="kr.co.yu.model.GalleryVO" />
 	</typeAliases>
 </configuration>

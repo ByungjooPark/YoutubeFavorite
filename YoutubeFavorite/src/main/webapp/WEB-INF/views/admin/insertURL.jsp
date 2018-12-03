@@ -29,12 +29,12 @@
 			
 			xhttp.onreadystatechange = function() {
 				if(this.readyState == 4 && this.status == 200) {
-					var obj = JSON.parse(this.responseText);
+					var obj = JSON.parse(this.responseText); // json으로 파싱해서 오브젝트에 담음
 					
-					if(obj.items[0] != undefined) {
+					if(obj.items[0] != undefined) { // 자료가 없다면 undefined임
 						var y_title = document.getElementById("y_title");
 						y_title.value = obj.items[0].snippet.title;
-						form.submit();
+						form.submit(); // form을 서브밋 함.
 					}
 				}
 			};
